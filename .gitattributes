@@ -1,6 +1,6 @@
 
 
 * linguist-vendored
-*.hack linguist-vendored=false
+*.hack linguist-vendored=true
 *.css linguist-vendored=false
 *.php linguist-vendored=false
