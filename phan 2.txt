@@ -1,0 +1,22 @@
+//phan 2
+	//===Ví dụ phân ngưỡng nhị phân trên ảnh src sử dụng ngưỡng THRESH_BINARY
+	Mat dst;
+	threshold(src, dst, 100, 255, THRESH_BINARY);
+	imshow("Phan nguong", dst);
+
+	//===Ví dụ làm trơn trên kênh S(kenh_hsv[1])
+	blur(kenh_hsv[1], dst, Size(3, 3), Point(-1, -1), 4);
+	imshow("lam tron", dst);
+
+	//1.truy cập giá trị điểm ảnh
+	//===Hiển thị giá trị điểm ảnh tại tọa độ bất kỳ của ảnh 3 kênh, 1 kênh.
+	cout << "hien thi gia tri B toa do I(100,100) : " << (int)src.at<Vec3b>(100, 100)[0] << endl;
+	cout << "hien thi gia tri G toa do I(100,100) : " << (int)src.at<Vec3b>(100, 100)[1] << endl;
+	cout << "hien thi gia tri R toa do I(100,100) : " << (int)src.at<Vec3b>(100, 100)[2] << endl;
+	//1 kênh
+	cout << "hien thi diem anh toa do I(100,100) kenh red : " << (int)kenh[2].at<uchar>(100, 100) << endl;
+	//can bang muc xam
+	equalizeHist(kenh[0], kenh[0]);
+	imshow("can bang tren kenh blue", kenh[0]);
+        equalizeHist(kenh[1], kenh[1]);
+        imshow("can bang Hist tren kenh green", kenh[1]);
